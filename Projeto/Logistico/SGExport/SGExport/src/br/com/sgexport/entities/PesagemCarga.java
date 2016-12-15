@@ -9,6 +9,7 @@ public class PesagemCarga {
 
 	@Id
 	@Column(name="idPesagemCarga", nullable=false)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer idPesagemCarga;
 	
 	@Column(name="dataEntradaCarga", nullable=false)
@@ -31,6 +32,9 @@ public class PesagemCarga {
 	
 	@Column(name="pesoTaraVeiculo", nullable=true, length=11)
 	private Double pesoTaraVeiculo;
+
+	@Column(name="quantCarga", nullable=true, length=6)
+	private Integer quantCarga;
 	
 	@Column(name="ticketPesagemCarga", nullable=true, length=10)
 	private String ticketPesagemCarga;
@@ -38,6 +42,13 @@ public class PesagemCarga {
 	@Column(name="sequencialPesagem", nullable=false, length=13)
 	private String sequencialPesagem;
 	
+	
+	public Integer getQuantCarga() {
+		return quantCarga;
+	}
+	public void setQuantCarga(Integer quantCarga) {
+		this.quantCarga = quantCarga;
+	}
 	public Integer getIdPesagemCarga() {
 		return idPesagemCarga;
 	}
@@ -98,7 +109,5 @@ public class PesagemCarga {
 	public void setSequencialPesagem(String sequencialPesagem) {
 		this.sequencialPesagem = sequencialPesagem;
 	}
-	
-	
-	
+			
 }
